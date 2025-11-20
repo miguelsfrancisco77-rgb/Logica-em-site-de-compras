@@ -1,4 +1,4 @@
-let valorTotal
+let valorTotal = 0
 function adicionar(){
   
 //Recupearar os valores do HTML
@@ -10,8 +10,8 @@ function adicionar(){
   let valorUnitario = produto.split('R$')[1];
   let preço = quantidade * valorUnitario;
   //Adicionar iten ao carrinho
- let quantidadu = document.querySelector("input")
- if(quantidade >= 0){
+  let quantidadu = document.querySelector("input").value;
+ if(quantidadu > 0){
   carrinho.innerHTML = carrinho.innerHTML +  `<section class="carrinho__produtos__produto">
           <span class="texto-azul">${quantidade}x</span> ${itenProduto} <span class="texto-azul">R$${preço}</span>
         </section>`;
@@ -20,7 +20,7 @@ function adicionar(){
   let total = document.getElementById("valor-total");
   total.textContent = `${valorTotal}`;
  } else{
-   alert("Selecione uma quantidade valida")
+   alert("Selecione uma quantidade valida");
  }
 }
   function limpar(){
